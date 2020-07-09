@@ -36,6 +36,8 @@ public class ServletCookieTest extends HttpServlet {
             for (Cookie cookie:cookies){
                 String name = cookie.getName();
                 if ("lastTime".equals(name)){
+
+                    String value = cookie.getValue();
                     flag=true;
                     //设置cookie的value
                     //获取当前时间的字符串，重新设置Cookie的值，重新发送cookie
@@ -49,7 +51,6 @@ public class ServletCookieTest extends HttpServlet {
                     //设置cookie的存活时间
                     cookie.setMaxAge(60*60*24*30);//一个月
 
-                    String value = cookie.getValue();
                     value= URLDecoder.decode(value,"utf-8");
                     //不是第一次访问
                     response.getWriter().write("<h1>欢迎回来，您上次访问的时间为："+value+"</h1>");

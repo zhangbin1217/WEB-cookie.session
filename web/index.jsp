@@ -12,5 +12,9 @@
   </head>
   <body>
   $END$
+  <%
+    System.out.println("hello jsp");
+  %>
+  <h1>hi~jsp!</h1>
   </body>
 </html>
